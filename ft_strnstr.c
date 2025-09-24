@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 20:46:20 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/24 17:32:43 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/24 22:25:48 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,11 @@ char	*ft_strnstr(const char *b, const char *l, size_t len)
 	return (NULL);
 }
 
-
-int	main(void)
+/*int	main(void)
 {
 	char l[] = "cki";
 	char b[] = "plccki sa fajne";
 	
 	printf("%s", ft_strnstr(b, l, 9));
 	return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:36:22 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/24 16:14:15 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/24 22:49:54 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,24 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	unsigned char	*str;
+	int				i;
 
+	i = 0;
+	str = s;
+	while (i < n)
+	{
+		str[i] = 0;
+		i++;
+	}
 }
+
+/*int	main(void)
+{
+	//char s[] = "black hole";
+	unsigned int s = 4294967295;
+
+	ft_bzero(&s, 4);
+	printf("%u", s);
+	return (0);
+}*/

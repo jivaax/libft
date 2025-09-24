@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 23:03:39 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/23 12:15:42 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/24 22:22:48 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 int	ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
-		c += 32;
-	return (c);
+		return (c += 32);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	c;
 
 	c = 'Z';
 	printf("%c", ft_tolower(c));
 	return (0);
-}
+}*/

@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 22:29:03 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/24 22:55:26 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/24 20:33:00 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/24 20:34:21 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	i;
-	int	j;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	i = 0;
-	j = 0;
-	while (dst[i])
-		i++;
-	while (j <= size - i - 1)
+	dest = d;
+	src = s;
+	if (s > d)
 	{
-		dst[j + i] = src[j];
-		j++;
+	
 	}
-	j = 0;
-	while (dst[j])
-		j++;
-	return (j);
+	if (s < d)
+	{
+		
+	}
 }
 
 /*int	main(void)
 {
-	char d[15] = "julianka";
-	char s[] = " roza wira";
+	char d[] = "efgh";
+	char s[] = "abcd";
 
-	printf("%d", ft_strlcat(d, s, 15));
+	printf("%s", ft_memcpy(d, s, 3));
 	return (0);
 }*/

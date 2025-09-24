@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 22:29:03 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/24 22:55:26 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/24 19:14:25 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/24 22:22:33 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "./libft.h"
 
-int	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	j = 0;
-	while (dst[i])
-		i++;
-	while (j <= size - i - 1)
-	{
-		dst[j + i] = src[j];
-		j++;
-	}
-	j = 0;
-	while (dst[j])
-		j++;
-	return (j);
+	i = ft_strlen(s);
+	if (c == 0)
+		return ((char *)&s[i]);
+	while (i > 0 && s[--i])
+		if (s[i] == c)
+			return ((char *)&s[i]);
+	return (NULL);
 }
 
 /*int	main(void)
 {
-	char d[15] = "julianka";
-	char s[] = " roza wira";
+	const char	s[] = "please work great";
+	int	c;
 
-	printf("%d", ft_strlcat(d, s, 15));
+	c = 0;
+	printf("%p", ft_strrchr(s, c));
 	return (0);
 }*/
