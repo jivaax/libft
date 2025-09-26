@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 21:27:54 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 16:09:21 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/26 18:52:20 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/26 23:01:19 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "./libft.h"
+#include <stdint.h>
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
+	void	*str;
 
-	i = 0;
-	while (i <= size - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (size > 0)
-		dst[size] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	if (nmemb * size < size || nmemb * size < nmemb)
+		return (NULL);
+	str = malloc(nmemb * size);
+	if (!str)
+		return (NULL);
+	ft_bzero(str, nmemb * size);
+	return (str);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char d[10] = "koteczki";
-	char s[] = "psy";
-
-	printf("%d", ft_strlcpy(d, s, 5));
+	void	*str = ft_calloc(5, sizeof(int));
+	printf("%p\n", str);
+	free(str);
 	return (0);
-}*/
+}

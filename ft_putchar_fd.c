@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 21:27:54 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 16:09:21 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/26 23:03:50 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/26 23:14:25 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i <= size - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (size > 0)
-		dst[size] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	write (1, &c, fd);
 }
 
 /*int	main(void)
 {
-	char d[10] = "koteczki";
-	char s[] = "psy";
-
-	printf("%d", ft_strlcpy(d, s, 5));
+	ft_putchar_fd('s' , 1);
 	return (0);
 }*/

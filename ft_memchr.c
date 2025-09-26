@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 21:27:54 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 16:09:21 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/26 15:15:32 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/26 17:37:23 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	const unsigned char	*str;
+	unsigned char		cc;
+	size_t				i;
 
+	str = s;
+	cc = c;
 	i = 0;
-	while (i <= size - 1)
+	while (i < n)
 	{
-		dst[i] = src[i];
+		if (str[i] == cc)
+			return ((void *)&str[i]);
 		i++;
 	}
-	if (size > 0)
-		dst[size] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	if (cc == 0)
+		return ((void *)&str[i]);
+	return (NULL);
 }
 
 /*int	main(void)
 {
-	char d[10] = "koteczki";
-	char s[] = "psy";
+	const char	s[] = "please work great";
+	int	c = 0;
 
-	printf("%d", ft_strlcpy(d, s, 5));
+	printf("%s", (char *)ft_memchr(s + 6, c, 10));
 	return (0);
 }*/

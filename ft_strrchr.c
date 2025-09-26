@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 19:14:25 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/24 22:22:33 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/26 15:42:58 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strrchr(const char *s, int c)
 	const char	s[] = "please work great";
 	int	c;
 
-	c = 0;
-	printf("%p", ft_strrchr(s, c));
+	c = 'a';
+	printf("%s", ft_strrchr(s, c));
 	return (0);
 }*/

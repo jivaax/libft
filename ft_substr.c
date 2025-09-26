@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 21:27:54 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 16:09:21 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/26 22:02:12 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/26 22:13:55 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (i <= size - 1)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (size > 0)
-		dst[size] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	
 }
-
-/*int	main(void)
+int	main(void)
 {
-	char d[10] = "koteczki";
-	char s[] = "psy";
+	char s[] = "this is a string";
+	int	start = 10;
 
-	printf("%d", ft_strlcpy(d, s, 5));
+	char	*str = ft_substr(s, start, 3);
+	printf("%s", str);
+	free(str);
 	return (0);
-}*/
+}

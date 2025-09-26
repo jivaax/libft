@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 22:29:03 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/24 22:55:26 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/26 16:14:04 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	j;
+	int		i;
+	size_t	j;
 
 	i = 0;
 	j = 0;

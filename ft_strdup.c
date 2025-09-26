@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 21:27:54 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 16:09:21 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/26 18:55:25 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/26 22:16:54 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "./libft.h"
 
-int	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strdup(const char *s)
 {
+	char	*str;
+	size_t	size;
 	size_t	i;
 
+	size = ft_strlen(s);
+	str = malloc(size + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (i <= size - 1)
+	while (i < size + 1)
 	{
-		dst[i] = src[i];
+		str[i] = s[i];
 		i++;
 	}
-	if (size > 0)
-		dst[size] = '\0';
-	i = 0;
-	while (src[i])
-		i++;
-	return (i);
+	return (str);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char d[10] = "koteczki";
-	char s[] = "psy";
+	char s[] = "hdypynitgof";
+	char	*str = ft_strdup(s);
 
-	printf("%d", ft_strlcpy(d, s, 5));
+	printf("%p\n%p", str, s);
+	free(str);
 	return (0);
-}*/
+}

@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:36:22 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/24 22:49:54 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/26 22:00:25 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*str;
-	int				i;
+	size_t			i;
 
 	i = 0;
 	str = s;
