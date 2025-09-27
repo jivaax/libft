@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 22:29:03 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/27 18:34:49 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/27 18:37:43 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/27 18:55:05 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (dst[i])
-		i++;
-	while (j <= size - i - 1)
-	{
-		dst[j + i] = src[j];
-		j++;
-	}
-	dst[j + 1] = '\0';
-	j = 0;
-	while (dst[j])
-		j++;
-	return (j);
+	
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char d[15] = "hello";
-	char s[] = " world";
+	char	s1[] = "lllkkjolhello worldkkkoolljjj";
+	char	set[5] = {"lokj"};
+	char	*trim;
 
-	printf("%d\n%s", ft_strlcat(d, s, 15), d);
+	trim = ft_strtrim(s1, set);
 	return (0);
-}*/
+}
