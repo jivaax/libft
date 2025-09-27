@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 23:03:50 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 23:14:25 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/27 11:15:56 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write (1, &c, fd);
+	write (fd, &c, 1);
 }
 
 /*int	main(void)

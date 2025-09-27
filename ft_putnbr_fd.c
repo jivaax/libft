@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 18:55:25 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/27 14:39:41 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/27 10:54:19 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/27 12:28:05 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "./libft.h"
+#include <unistd.h>
 
-char	*ft_strdup(const char *s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	size_t	size;
-	size_t	i;
+	char	nbr;
 
-	size = ft_strlen(s);
-	str = malloc(size + 1);
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i < size + 1)
+	if (n == -2147483648)
+		write (fd, "-2147483648", 11);
+	else if (n >= 0 && n <= 9)
 	{
-		str[i] = s[i];
-		i++;
+		nbr = n + 48;
+		write (fd, &nbr, 1);
 	}
-	return (str);
+	else if (n > 9)
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
+	else if (n < 0)
+	{
+		write (fd, "-", 1);
+		n = -n;
+		ft_putnbr_fd(n, fd);
+	}
 }
 
 /*int	main(void)
 {
-	char s[] = "hdypynitgof";
-	char	*str = ft_strdup(s);
-
-	printf("%p\n%p", str, s);
-	free(str);
+	ft_putnbr_fd(-2147483648, 1);
 	return (0);
 }*/

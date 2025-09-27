@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 18:55:25 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/27 14:39:41 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/27 10:48:09 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/27 11:15:34 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "./libft.h"
+#include <unistd.h>
 
-char	*ft_strdup(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*str;
-	size_t	size;
-	size_t	i;
+	int	i;
 
-	size = ft_strlen(s);
-	str = malloc(size + 1);
-	if (!str)
-		return (NULL);
 	i = 0;
-	while (i < size + 1)
+	while (s[i])
 	{
-		str[i] = s[i];
+		write (fd, &s[i], 1);
 		i++;
 	}
-	return (str);
+	write (1, "\n", fd);
 }
 
 /*int	main(void)
 {
-	char s[] = "hdypynitgof";
-	char	*str = ft_strdup(s);
-
-	printf("%p\n%p", str, s);
-	free(str);
+	char	s[] = "abcdefg";
+	ft_putendl_fd(s, 1);
 	return (0);
 }*/

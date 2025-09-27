@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 23:08:48 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 23:14:18 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/27 11:15:49 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
-		write (1, &s[i], fd);
+		write (fd, &s[i], 1);
 		i++;
 	}
 }

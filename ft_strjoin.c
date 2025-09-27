@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/26 18:55:25 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/27 14:39:41 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/27 13:44:42 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/27 15:00:00 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "./libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
-	size_t	size;
-	size_t	i;
+	char	*concat;
+	int		i;
+	int		j;
 
-	size = ft_strlen(s);
-	str = malloc(size + 1);
-	if (!str)
-		return (NULL);
 	i = 0;
-	while (i < size + 1)
+	j = 0;
+	concat = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	while (s1[i])
 	{
-		str[i] = s[i];
+		concat[i] = s1[i];
 		i++;
 	}
-	return (str);
+	while (s2[j])
+	{
+		concat[i + j] = s2[j];
+		j++;
+	}
+	return (concat);
 }
 
-/*int	main(void)
+int	main(void)
 {
-	char s[] = "hdypynitgof";
-	char	*str = ft_strdup(s);
+	char s1[] = "un";
+	char s2[] = "happy";
+	char *concat = ft_strjoin(s1, s2);
 
-	printf("%p\n%p", str, s);
-	free(str);
+	printf("%s", concat);
 	return (0);
-}*/
+}
