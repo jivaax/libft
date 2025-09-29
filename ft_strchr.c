@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 15:22:44 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 16:04:58 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/29 22:45:19 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,25 @@
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
+	unsigned char	ch;
 
+	ch = c;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == ch)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (c == 0)
+	if (ch == 0)
 		return ((char *)&s[i]);
 	return (NULL);
 }
 
 /*int	main(void)
 {
-	const char	s[] = "please work great";
-	int	c = 0;
+	const char	s[] = "tuptuptup";
 
-	printf("%p", ft_strchr(s, c));
+	printf("%s", ft_strchr(s, 't' + 256));
 	return (0);
 }*/

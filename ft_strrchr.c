@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 19:14:25 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/26 15:42:58 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/29 22:46:47 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s);
-	if (c == 0)
+	if ((unsigned char)c == 0)
 		return ((char *)&s[i]);
 	while (i > 0 && s[--i])
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return ((char *)&s[i]);
 	return (NULL);
 }

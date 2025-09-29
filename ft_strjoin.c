@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 13:44:42 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/27 19:29:33 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/29 15:25:02 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (concat);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char s1[] = "un";
 	char s2[] = "happy";
@@ -48,4 +48,4 @@ int	main(void)
 	printf("%s", concat);
 	printf("\n%ld", ft_strlen(concat));
 	return (0);
-}
+}*/

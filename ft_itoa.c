@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/23 19:35:24 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/29 19:45:59 by jwira            ###   ########.fr       */
+/*   Created: 2025/09/28 22:25:20 by jwira             #+#    #+#             */
+/*   Updated: 2025/09/29 19:47:29 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+/*char	*ft_itoa(int n)
 {
-	size_t	i;
+	char	*str;
 
-	i = 0;
-	while (i < n)
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+//	str = malloc(sizeof(int));
+
+	
+	return (str);
 }
+
+int	main(void)
+{
+	int	n;
+
+	n = 2147483647;
+	printf("%s", ft_itoa(n));
+	return (0);
+}*/
