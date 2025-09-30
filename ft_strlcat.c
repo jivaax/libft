@@ -6,38 +6,44 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 22:29:03 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/27 18:34:49 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/30 21:41:48 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
+	size_t	i;
 	size_t	j;
+	int		l;
 
 	i = 0;
 	j = 0;
-	while (dst[i])
+	l = ft_strlen(src);
+	while (dst[i] && size != 0)
 		i++;
-	while (j <= size - i - 1)
+	while (j + i + 1 < size && src[j])
 	{
-		dst[j + i] = src[j];
+		dst[i + j] = src[j];
 		j++;
 	}
-	dst[j + 1] = '\0';
-	j = 0;
-	while (dst[j])
-		j++;
-	return (j);
+	if (size > 0)
+		dst[j + i] = '\0';
+	if (size < i)
+		i -= (i - size);
+	return (i + l);
 }
 
-/*int	main(void)
-{
-	char d[15] = "hello";
-	char s[] = " world";
+//int	main(void)
+//{
+//	char	dest[4];
+//	ft_memset(dest, 'B', 4);
+//	char	*src = (char *)"AAAAAAAAA";
 
-	printf("%d\n%s", ft_strlcat(d, s, 15), d);
-	return (0);
-}*/
+//	printf("%d\n%s", ft_strlcat(dest, src, 3), dest);
+//	return (0);
+//}

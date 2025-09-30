@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 20:46:20 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/29 16:33:57 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/30 23:08:57 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *b, const char *l, size_t len)
 	j = 0;
 	if (l[0] == '\0')
 		return ((char *)b);
-	while (j <= len && b[j])
+	while (j < len && b[j])
 	{
 		if (b[j] == l[i])
 			i++;
@@ -37,12 +37,3 @@ char	*ft_strnstr(const char *b, const char *l, size_t len)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	char l[] = "cki";
-	char b[] = "plcck sa fajne";
-	
-	printf("%s", ft_strnstr(b, l, 9));
-	return (0);
-}*/

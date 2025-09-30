@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 18:52:20 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/29 20:40:41 by jwira            ###   ########.fr       */
+/*   Updated: 2025/09/30 23:15:12 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (str);
 }
 
-/*int	main(void)
-{
-	void	*str = ft_calloc(5, sizeof(int));
-	printf("%p\n", str);
-	free(str);
-	return (0);
-}*/
+//int	main(void)
+//{
+//	void * p = ft_calloc(0, 5);
+//	printf("%p\n", p);
+//	free(p);
+//	return (0);
+//}
