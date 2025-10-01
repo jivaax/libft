@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 10:48:09 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/27 11:15:34 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/01 15:47:17 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putendl_fd(char *s, int fd)
 		write (fd, &s[i], 1);
 		i++;
 	}
-	write (1, "\n", fd);
+	write (fd, "\n", 1);
 }
 
 /*int	main(void)

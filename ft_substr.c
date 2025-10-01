@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 22:02:12 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/29 20:33:20 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/01 11:42:47 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,27 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
 	str = malloc(len + 1);
-	if (!str || start + len > ft_strlen(s))
+	if (!str)
 		return (NULL);
 	while (i < len)
 	{
 		str[i] = s[start + i];
 		i++;
 	}
+	str[i] = 0;
 	return (str);
 }
 
-/*int	main(void)
-{
-	char	s[] = "hello world";
-	char	*str = ft_substr(s, 12, 5);
+//int	main(void)
+//{
+//	char	*s = ft_substr("tripouille", 0, 42000);
 
-	printf("%s", str);
-	free(str);
-	return (0);
-}*/
+//	printf("%s", s);
+//	free(s);
+//	return (0);
+//}
