@@ -3,6 +3,7 @@
 		"stdlib.h": "c",
 		"random": "c",
 		"bitset": "c",
-		"set": "c"
+		"set": "c",
+		"numbers": "c"
 	}
 }
