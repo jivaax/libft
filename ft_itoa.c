@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 22:25:20 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/11 19:06:37 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/12 12:28:16 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ static int	size(int n)
 		return (1);
 	s = 0;
 	if (n < 0)
-	{
 		s++;
-		n = -n;
-	}
 	while (n != 0)
 	{
 		n = n / 10;
@@ -66,6 +63,8 @@ char	*ft_itoa(int n)
 //{
 //	int		n;
 //	n = -1;
-//	printf("%s", ft_itoa(n));
+//	char	*s = ft_itoa(n);
+//	printf("%s", s);
+//	free(s);
 //	return (0);
 //}
