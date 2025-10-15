@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 19:13:08 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/12 18:49:56 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/15 14:55:38 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,46 @@ static	int	words_len(char const *s, char c, int i)
 	return (i);
 }
 
+static int	words_count(char const *s, char c)
+{
+	int	i;
+	int	w;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			while (s[i] == c && s[i + 1] == c)
+				i++;
+		}
+	}
+	return (w);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		l;
+	int		w;
 	char	**str;
 
-	i = 0;
-	str = malloc(ft_strlen(s) + 1);
-	l = words_len(s, c, i) + 1;
-	if (!str)
-		free(str);
-
+	w = words_count(s, c);
+	while (s[i])
+	{
+		str = malloc(words_len(s, c, i) + 1);
+		if (!str)
+			free(str);
+		ft_strlcpy(str, s, );
+	}
 	return (str);
 }
 
 int	main(void)
 {
-	char	str[] = "hello,beautiful,world,!";
+	char	s[] = ",hello,,,,,,beautiful,,,world,,,,,,,,,,,,!,";
 	char	c = ',';
-	char	**s;
+	char	**str;
 
-	s = ft_split(str, c);
+	str = ft_split(s, c);
 	return (0);
 }
