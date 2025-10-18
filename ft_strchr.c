@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 15:22:44 by jwira             #+#    #+#             */
-/*   Updated: 2025/09/29 22:45:19 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/18 23:22:35 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int				i;
 	unsigned char	ch;
 
 	ch = c;

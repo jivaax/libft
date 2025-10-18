@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 18:37:43 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/08 23:47:03 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/18 23:22:05 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = front(s1, set);
 	j = back(s1, set);
-
 	if (j == 0)
 	{
 		trim = malloc(1);

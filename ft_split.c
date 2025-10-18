@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 19:13:08 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/18 17:28:34 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/18 23:21:46 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	words(char const *arr, char c)
 
 	i = 0;
 	w = 0;
+	if (!arr[i])
+		return (w);
 	while (arr[i])
 	{
 		if (arr[i] != c)
@@ -54,21 +56,19 @@ static void	mall_l(char const *arr, char c, char **str)
 			l++;
 			i++;
 		}
-		str[w] = ft_calloc((l + 1), sizeof(char *));
+		str[w] = ft_calloc((l + 1), sizeof(char));
 		w++;
 	}
 }
 
-static void	scopy(int w, char const *arr, char c, char **str)
+static void	scopy(char const *arr, char c, char **str)
 {
 	int	i;
 	int	cnt;
 	int	n;
 
-	(void)w;
 	i = 0;
 	n = 0;
-
 	while (arr[i])
 	{
 		cnt = 0;
@@ -91,14 +91,13 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	char	*arr;
 
-
 	arr = ft_strtrim(s, &c);
 	w = words(arr, c);
-	str = ft_calloc ((w + 1), sizeof(char *));
+	str = ft_calloc((w + 1), sizeof(char *));
 	if (!str)
 		return (NULL);
 	mall_l(arr, c, str);
-	scopy(w, arr, c, str);
+	scopy(arr, c, str);
 	str[w] = NULL;
 	free(arr);
 	return (str);
@@ -106,8 +105,8 @@ char	**ft_split(char const *s, char c)
 
 //int	main(void)
 //{
-//	char	s[] = ",hello,,,,,,beautiful,,,world,,,,,,,,,,,,!,";
-//	char	c = ',';
+//	char	s[] = "";
+//	char	c = ' ';
 //	char	**str;
 //	int		j;
 
