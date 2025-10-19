@@ -26,6 +26,14 @@ clean:
 fclean: clean
 	${RM} ${NAME}
 
+ifneq ($(shell uname), Darwin)
+breaker:
+			$(CC) -nostartfiles -shared -fPIC -ldl $(CFLAGS) -o libft.so $(SRC) $(SRCBONUS)
+else
+breaker:
+			$(CC) -dynamiclib $(CFLAGS) -o libft.so $(SRC) $(SRCBONUS) -L../obj -lmalloc
+endif
+
 re: fclean all
 
 .PHONY: all clean fclean re

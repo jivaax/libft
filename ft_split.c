@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 19:13:08 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/18 23:21:46 by jwira            ###   ########.fr       */
+/*   Updated: 2025/10/19 19:33:16 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,15 +105,18 @@ char	**ft_split(char const *s, char c)
 
 //int	main(void)
 //{
-//	char	s[] = "";
-//	char	c = ' ';
+//	//char	s[] = "lsls,cdcd,soso";
+//	//char	c = ',';
 //	char	**str;
 //	int		j;
 
 //	j = 0;
-//	str = ft_split(s, c);
+//	str = ft_split(" adipiscing elit. Sed non risus. Suspendisse", ' ');
 //	while (str[j])
 //		printf("%s\n", str[j++]);
+//	j = 0;
+//	while (str[j])
+//		free(str[j++]);
 //	free(str);
 //	return (0);
 //}
