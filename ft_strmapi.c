@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 19:13:26 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/18 23:21:13 by jwira            ###   ########.fr       */
+/*   Updated: 2025/11/05 20:35:40 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*res;
 
+	if (!s || !f)
+		return (NULL);
 	res = malloc(ft_strlen(s) + 1);
 	i = 0;
 	if (!res)
@@ -36,13 +38,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 //	return (i + c);
 //}
 //
-////int	main(void)
-////{
-////	char			*str;
-////	char	s[] = "0000000000";
+//int	main(void)
+//{
+//	char			*str;
+//	char	s[] = "Hello! <23> !^*_~";
 //
-////	str = ft_strmapi(s, f);
-////	printf("%s", str);
-////	free(str);
-////	return (0);
-////}
+//	str = ft_strmapi(s, NULL);
+//	printf("%s", str);
+//	free(str);
+//	return (0);
+//}

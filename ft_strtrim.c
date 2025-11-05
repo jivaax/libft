@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 18:37:43 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/18 23:22:05 by jwira            ###   ########.fr       */
+/*   Updated: 2025/11/05 20:41:39 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	i = front(s1, set);
 	j = back(s1, set);
 	if (j == 0)
@@ -81,20 +85,20 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (trim);
 	}
 	trim = malloc((j - i) + 2);
-	ft_strlcpy(trim, &s1[i], (j - i) + 2);
 	if (!trim)
 		return (NULL);
+	ft_strlcpy(trim, &s1[i], (j - i) + 2);
 	return (trim);
 }
 
-/*int	main(void)
-{
-	char	s1[] = "   xxx   xxx";
-	char	set[3] = {" x"};
-	char	*trim;
-
-	trim = ft_strtrim(s1, set);
-	printf("%s", trim);
-	free(trim);
-	return (0);
-}*/
+//int	main(void)
+//{
+//	char	s1[] = " Hello everyone!   ";
+//	char	set[3] = {" "};
+//	char	*trim;
+//
+//	trim = ft_strtrim(s1, set);
+//	printf("%s", trim);
+//	free(trim);
+//	return (0);
+//}

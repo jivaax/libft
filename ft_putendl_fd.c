@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 10:48:09 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/01 15:47:17 by jwira            ###   ########.fr       */
+/*   Updated: 2025/11/05 20:17:24 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{
@@ -27,7 +29,7 @@ void	ft_putendl_fd(char *s, int fd)
 
 /*int	main(void)
 {
-	char	s[] = "abcdefg";
+	char	*s = NULL;
 	ft_putendl_fd(s, 1);
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 22:29:03 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/19 15:44:21 by jwira            ###   ########.fr       */
+/*   Updated: 2025/11/04 11:06:24 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_strlcat(char *dst, const char *src, size_t size)
 //	char	dest[4];
 //	ft_memset(dest, 'B', 4);
 //	char	*src = (char *)"AAAAAAAAA";
-
+//
 //	printf("%d\n%s", ft_strlcat(dest, src, 3), dest);
 //	return (0);
 //}

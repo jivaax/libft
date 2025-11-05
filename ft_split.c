@@ -6,7 +6,7 @@
 /*   By: jwira <jwira@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 19:13:08 by jwira             #+#    #+#             */
-/*   Updated: 2025/10/19 19:33:16 by jwira            ###   ########.fr       */
+/*   Updated: 2025/11/05 19:55:23 by jwira            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,21 @@ static int	words(char const *arr, char c)
 
 	i = 0;
 	w = 0;
-	if (!arr[i])
-		return (w);
 	while (arr[i])
 	{
-		if (arr[i] != c)
+		while (arr[i] && arr[i] == c)
 			i++;
-		else if (arr[i] == c)
+		if (arr[i])
 		{
-			if (arr[i + 1] != c)
-				w++;
-			i++;
+			w++;
+			while (arr[i] && arr[i] != c)
+				i++;
 		}
 	}
-	w++;
 	return (w);
 }
 
-static void	mall_l(char const *arr, char c, char **str)
+static int	mall_l(char const *arr, char c, char **str)
 {
 	int	l;
 	int	i;
@@ -51,14 +48,19 @@ static void	mall_l(char const *arr, char c, char **str)
 		l = 0;
 		while (arr[i] && arr[i] == c)
 			i++;
-		while (arr[i] && arr[i] != c)
-		{
+		while (arr[i] && arr[i++] != c)
 			l++;
-			i++;
+		str[w] = ft_calloc(l + 1, sizeof(char));
+		if (!str[w])
+		{
+			while (w-- > 0)
+				free(str[w]);
+			free(str);
+			return (0);
 		}
-		str[w] = ft_calloc((l + 1), sizeof(char));
 		w++;
 	}
+	return (1);
 }
 
 static void	scopy(char const *arr, char c, char **str)
@@ -91,12 +93,20 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	char	*arr;
 
+	if (!s)
+		return (0);
 	arr = ft_strtrim(s, &c);
+	if (!arr)
+		return (NULL);
 	w = words(arr, c);
 	str = ft_calloc((w + 1), sizeof(char *));
 	if (!str)
 		return (NULL);
-	mall_l(arr, c, str);
+	if (!mall_l(arr, c, str))
+	{
+		free(arr);
+		return (NULL);
+	}
 	scopy(arr, c, str);
 	str[w] = NULL;
 	free(arr);
@@ -109,7 +119,7 @@ char	**ft_split(char const *s, char c)
 //	//char	c = ',';
 //	char	**str;
 //	int		j;
-
+//
 //	j = 0;
 //	str = ft_split(" adipiscing elit. Sed non risus. Suspendisse", ' ');
 //	while (str[j])
